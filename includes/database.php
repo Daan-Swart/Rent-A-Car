@@ -1,15 +1,16 @@
 <?php
     // Database connection
-   $host = "localhost";
-   $dbname = "rent-a-car";
-   $username = "root";
-   $password = "";
-   
-   $mysqli = new mysqli($host, $username, $password, $dbname);
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "rent-a-ar";
 
-
-   if($mysqli->connect_errno){
-        die("Connection error: " . $mysqli->connect_error );
-   }
-   return $mysqli;
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
 ?>
