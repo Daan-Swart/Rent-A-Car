@@ -25,8 +25,8 @@ include('includes/header.php');
                         <input type="password" name="password" id="password">
                     </div>
                     <div class="input-field">
-                        <label for="password-confirmation">Herhaal Wachtwoord</label>
-                        <input type="password" name="password_ confirmation" id="password-confirmation">
+                        <label for="password_confirmation">Herhaal Wachtwoord</label>
+                        <input type="password" name="password_confirmation" id="password-confirmation">
                     </div>
                     <div class="input-field center-align">
                         <input type="submit" class="btn-large green darken-2" value="Bevestigen">
