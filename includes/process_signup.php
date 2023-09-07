@@ -47,10 +47,12 @@ try {
     $stmt->execute();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    // echo $e->getMessage();
-    // echo "<br>";
-    $error_array = $e->errorInfo;
-    echo $error_array[1];
+    echo $e->getMessage();
+    echo "<br>";
+
+    //  ERROR HANDLING: DUPLICATE EMAIL. 
+    // $error_array = $e->errorInfo;
+    // echo $error_array[1];
 
 }
 
