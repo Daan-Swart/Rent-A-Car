@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("database.php");
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -42,17 +43,23 @@ $password_hash = password_hash($password, PASSWORD_DEFAULT);
 // insert user credentials into database table user. 
 
 try {
-    $query = "INSERT INTO user (name, email, password_hash) VALUES ('$name', '$email', '$password_hash')";
-    $stmt = $conn->prepare($query);
+    $stmt = $conn->prepare("INSERT INTO user (name, email, password_hash)
+    VALUES (:firstname, :email, :email)");
+    $stmt->bindParam(':firstname', $name);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $password_hash);
     $stmt->execute();
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo $e->getMessage();
     echo "<br>";
+    $error_array = $e->errorInfo;
 
-    //  ERROR HANDLING: DUPLICATE EMAIL. 
-    // $error_array = $e->errorInfo;
-    // echo $error_array[1];
+    //Email already in use (Duplicate entry voor email);
+    if($error_array[1] === 1062){
+        echo "email al in gebruik";
+        header("Location: ../sign_up.php");
+        $_SESSION['email_error'] = "Email adres bestaat al";
+    }
 
 }
 

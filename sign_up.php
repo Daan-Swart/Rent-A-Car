@@ -1,4 +1,10 @@
 <?php
+session_start();
+$email_error_message = "";
+if (isset($_SESSION['email_error'])) {
+    $email_error_message = $_SESSION['email_error'];
+    unset($_SESSION['email_error']);
+}
 include('includes/header.php');
 ?>
 
@@ -19,6 +25,7 @@ include('includes/header.php');
                     <div class="input-field">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email">
+                        <h6 style="color: red;"><?php echo $email_error_message ?></h6>
                     </div>
                     <div class="input-field">
                         <label for="password">Wachtwoord</label>
@@ -33,6 +40,7 @@ include('includes/header.php');
                     </div>
 
                 </form>
+                <!-- Email error message -->
 
             </div>
         </div>
