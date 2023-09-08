@@ -55,10 +55,10 @@ $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 try {
     $stmt = $conn->prepare("INSERT INTO user (name, email, password_hash)
-    VALUES (:firstname, :email, :email)");
+    VALUES (:firstname, :email, :password_hash)");
     $stmt->bindParam(':firstname', $name);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $password_hash);
+    $stmt->bindParam(':password_hash', $password_hash);
     $stmt->execute();
     header("Location: ../signup_succes.php");
 } catch (PDOException $e) {
