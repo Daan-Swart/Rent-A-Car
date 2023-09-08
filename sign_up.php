@@ -25,6 +25,7 @@ include('includes/header.php');
                     <div class="input-field">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email">
+                        <!-- Email error message -->
                         <h6 style="color: red;"><?php echo $email_error_message ?></h6>
                     </div>
                     <div class="input-field">
@@ -40,7 +41,7 @@ include('includes/header.php');
                     </div>
 
                 </form>
-                <!-- Email error message -->
+
 
             </div>
         </div>
