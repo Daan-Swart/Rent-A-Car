@@ -20,8 +20,8 @@
 <body>
     <header>
 
-        <nav class="nav-wrapper green">
-            <div class="container">
+        <nav class="nav-wrapper transparent">
+            <div class="container transparent">
 
                 <!-- Navbar -->
                 <a href="index.php" class="brand-logo">Rent-A-Car</a>
@@ -29,8 +29,8 @@
                     <i class="material-icons">menu</i>
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="login.php" class="btn green darken-2">Inloggen</a></li>
-                    <li><a href="sign_up.php" class="btn green darken-3">Registreren</a></li>
+                    <li><a href="login.php" class="btn yellow darken-4 white-text">Inloggen</a></li>
+                    <li><a href="sign_up.php" class="btn yellow darken-4 white-text">Registreren</a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down" id="firstnav">
                     <li><a href="index.php" id="home-link">Home</a></li>
