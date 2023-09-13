@@ -1,14 +1,22 @@
-
-
 body {
-    body {
         width: 100%;
         height: 100vh;
         margin: 0px;
+        background-color: E8E7E8;
     }
+
+nav{
+    background-color: #8ED588;
+}
+nav a{
+    color: black !important;
+}
+.transparent {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
-/* login.php */
+/* LOGIN */
+
 .login-body{
      width: 100%;
      height: 100vh;
@@ -42,3 +50,32 @@ body {
 .login-wrapper .card-action{
     text-align: center;
 }
+/* INDEX */
+
+/* slider */
+.slider .indicators {
+    bottom: 45px;
+    z-index: 2;
+}
+
+/* slider indicators */
+.slider .indicators .indicator-item {
+    margin: 0 5px;
+   
+}
+.caption h2{
+    margin-bottom: 30px !important;
+}
+#hero .btn{
+    background-color: #8ED588;
+    color: black;
+}
+
+/* ABOUT SECTION */
+.section h3{
+    width: 200px;
+    margin: 0 auto;
+    border-bottom: 3px solid black
+
+}
+
